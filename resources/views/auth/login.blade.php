@@ -8,36 +8,44 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body class="dark">
-  <div class="container">
-    <div class="header">
-      <h1>Login</h1>
+<body class="dark auth-page">
+
+  <div class="login-card">
+
+    {{-- HEADER: logo + teks login --}}
+    <div class="login-header">
+      <img src="{{ asset('images/logo.png') }}" class="login-logo" alt="Logo">
+      <div>
+        <h2 class="login-title">Login</h2>
+        <p class="login-subtext">Silakan masuk untuk melanjutkan</p>
+      </div>
     </div>
 
-    @if(session('success'))
-    <div class="alert">{{ session('success') }}</div>
-    @endif
     @if($errors->any())
-    <div class="alert" style="background:#fee2e2;color:#991b1b;border:1px solid #fecaca;">
+    <div class="alert alert-error">
       {{ $errors->first() }}
     </div>
     @endif
 
     <form action="{{ route('login.post') }}" method="POST" novalidate>
       @csrf
-      <label>Email</label>
-      <input type="email" name="email" value="{{ old('email') }}" required>
 
-      <label>Password</label>
-      <input type="password" name="password" required>
+      <label class="login-label">Email</label>
+      <input type="email" name="email" value="{{ old('email') }}" class="login-input" required>
 
-      <label style="display:flex;align-items:center;gap:6px;margin-top:10px;">
-        <input type="checkbox" name="remember"> Remember me
+      <label class="login-label">Password</label>
+      <input type="password" name="password" class="login-input" required>
+
+      <label class="remember-row">
+        <input type="checkbox" name="remember">
+        Remember me
       </label>
 
-      <input type="submit" value="Masuk" class="btn btn-primary">
-      <a href="/products" class="btn btn-danger">Kembali</a>
+      <button type="submit" class="login-btn-primary">Masuk</button>
+
+      <a href="/products" class="login-btn-secondary">Kembali</a>
     </form>
+
   </div>
 
 </body>
