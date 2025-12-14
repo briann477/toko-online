@@ -39,6 +39,12 @@
       <label>Harga (Rp)</label>
       <input type="number" name="price" value="{{ old('price', $product->price) }}" min="0" required>
 
+      <label>Stok</label>
+      <input type="number" name="stock"
+        value="{{ old('stock', $product->stock) }}"
+        min="0" required>
+
+
       <label>Deskripsi</label>
       <textarea name="description" rows="3">{{ old('description', $product->description) }}</textarea>
 

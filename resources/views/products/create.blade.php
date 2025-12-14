@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
-<body class="dark">
+<body class="dark page-create">
   <div class="container">
     <div class="header">
       <h1>Tambah Produk</h1>
@@ -25,6 +25,7 @@
     </div>
     @endif
 
+
     <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data" novalidate>
       @csrf
 
@@ -34,15 +35,23 @@
       <label>Harga (Rp)</label>
       <input type="number" name="price" value="{{ old('price') }}" min="0" required>
 
+      <label>Stok</label>
+      <input type="number" name="stock" value="{{ old('stock') }}" min="0" required>
+
+
       <label>Deskripsi</label>
       <textarea name="description" rows="3">{{ old('description') }}</textarea>
 
       <label>Foto Produk (opsional)</label>
       <input type="file" name="image" accept="image/*">
 
-      <input type="submit" value="Simpan" class="btn btn-primary">
-      <a href="{{ route('products.index') }}" class="btn btn-danger">Batal</a>
+      <div class="form-actions">
+        <button class="btn btn-primary">Simpan</button>
+        <a href="{{ route('products.index') }}" class="btn btn-danger">Batal</a>
+      </div>
     </form>
+
+
 
     <footer>© {{ date('Y') }} Opulence Gallery</footer>
   </div>

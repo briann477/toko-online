@@ -68,6 +68,7 @@
           <th>Foto</th>
           <th>Nama</th>
           <th>Harga</th>
+          <th>Stok</th>
           <th>Deskripsi</th>
           <th style="width:180px;">Aksi</th>
         </tr>
@@ -85,7 +86,17 @@
           </td>
           <td>{{ $p->name }}</td>
           <td>Rp{{ number_format($p->price, 0, ',', '.') }}</td>
+
+          <td>
+            @if($p->stock > 0)
+            {{ $p->stock }}
+            @else
+            <span style="color:#f87171;font-weight:600">Habis</span>
+            @endif
+          </td>
+
           <td>{{ $p->description ?? '-' }}</td>
+
           <td>
             @auth
             @if(in_array((int)auth()->user()->role, [0,1]))

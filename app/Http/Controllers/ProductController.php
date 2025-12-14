@@ -17,7 +17,7 @@ class ProductController extends Controller
         $products = Product::query()
             ->when($q !== '', function ($query) use ($q) {
                 $query->where('name', 'like', "%{$q}%")
-                      ->orWhere('description', 'like', "%{$q}%");
+                    ->orWhere('description', 'like', "%{$q}%");
             })
             ->orderBy('created_at', 'desc')
             ->paginate(5) // tampil 5 produk per ha  laman
@@ -49,6 +49,7 @@ class ProductController extends Controller
         Product::create([
             'name'        => $request->name,
             'price'       => $request->price,
+            'stock'       => $request->stock,
             'description' => $request->description,
             'image'       => $path,
         ]);
@@ -68,6 +69,7 @@ class ProductController extends Controller
         $request->validate([
             'name'        => ['required', 'string', 'max:255'],
             'price'       => ['required', 'numeric', 'min:0'],
+            'stock'       => ['required', 'integer', 'min:0'],
             'description' => ['nullable', 'string'],
             'image'       => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif,webp', 'max:2048'],
         ]);
@@ -75,6 +77,7 @@ class ProductController extends Controller
         $data = [
             'name'        => $request->name,
             'price'       => $request->price,
+            'stock'       => $request->stock,
             'description' => $request->description,
         ];
 

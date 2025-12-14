@@ -461,19 +461,7 @@ body.auth-page{
 }
 
 /* Table jadi card-list modern */
-table{
-  border-radius: 18px;
-  overflow: hidden;
-}
 
-tbody tr{
-  transition: transform .2s, box-shadow .2s;
-}
-
-tbody tr:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
-}
 
 /* Gambar produk lebih dominan */
 table img{
@@ -537,9 +525,7 @@ footer{
 }
 
 /* 4) Hover tabel lebih halus & modern */
-tbody tr{
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
+
 
 tbody tr:hover{
   transform: translateY(-3px);
@@ -633,6 +619,17 @@ td:nth-child(4){
   transform: translateY(-1px);
 }
 
+td:nth-child(4){
+  text-align: center;
+  font-weight: 600;
+  color: #cbd5e1;
+}
 
+td:nth-child(5){
+  color: #94a3b8;        /* abu-abu kebiruan, kalem */
+  font-size: 14px;
+  line-height: 1.5;
+}
 
-
+label { margin-top: 14px; }
+input, textarea { margin-bottom: 6px; }
