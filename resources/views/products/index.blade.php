@@ -12,7 +12,11 @@
   <div class="container">
     {{-- HEADER --}}
     <div class="header">
-      <h1>Daftar Produk</h1>
+      <h1 class="title-with-logo">
+        <img src="{{ asset('images/logo.png') }}" class="logo-dashboard" alt="Logo">
+        Daftar Produk
+      </h1>
+
 
       <div class="toolbar">
         {{-- Info user & login/logout --}}

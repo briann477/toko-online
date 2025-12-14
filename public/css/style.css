@@ -103,7 +103,6 @@ h1{
   font-size:28px;
   color:var(--text);
 }
-h1::before{content:"🛍️ ";}
 
 
 /* links */
@@ -428,4 +427,212 @@ body.auth-page{
 .login-btn-secondary:hover{
   background: #dc2626;
 }
+
+/* ==== LOGO UNTUK DASHBOARD ==== */
+.title-with-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dashboard {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* ===== DASHBOARD MODERN TOUCH ===== */
+
+/* Judul dashboard lebih hidup */
+.header h1{
+  font-size: 36px;
+  font-weight: 700;
+}
+
+/* Produk Terbaru jadi fokus */
+.dashboard-section{
+  margin-top: 26px;
+}
+
+.dashboard-section h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+/* Table jadi card-list modern */
+table{
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+tbody tr{
+  transition: transform .2s, box-shadow .2s;
+}
+
+tbody tr:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* Gambar produk lebih dominan */
+table img{
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+}
+
+/* Harga lebih tegas */
+td:nth-child(3){
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* Header lebih clean */
+.header{
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Footer lebih subtle */
+footer{
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* 1) Header lebih premium (depth + garis bawah) */
+.header{
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,0)
+  );
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+}
+
+/* 2) Judul Dashboard lebih tegas */
+.header h1{
+  font-size: 36px;
+  font-weight: 700;
+}
+
+/* 3) Section Produk Terbaru jadi “rapi” */
+.dashboard-section{
+  margin-top: 26px;
+}
+
+.dashboard-section h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 14px;
+
+  display: inline-block;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* 4) Hover tabel lebih halus & modern */
+tbody tr{
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+tbody tr:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* 5) Foto produk lebih konsisten */
+table img{
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+}
+
+/* 6) Harga lebih “pop” */
+td:nth-child(3){
+  font-weight: 700;
+  color: var(--success);
+}
+
+/* 7) Footer lebih subtle */
+footer{
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  opacity: .7;
+}
+
+.header{
+  margin-top: -12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* 1. Tombol utama lebih “niat” */
+.btn-success{
+  box-shadow: 0 6px 18px rgba(34,197,94,.35);
+}
+.btn-success:hover{
+  box-shadow: 0 10px 28px rgba(34,197,94,.45);
+}
+
+/* 2. Tanggal lebih soft */
+td:last-child{
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* 3. Hover tabel lebih halus */
+tbody tr{
+  transition: background .25s ease;
+}
+tbody tr:hover{
+  background: rgba(255,255,255,.03);
+}
+
+/* 4. Footer lebih kalem */
+footer{
+  opacity: .7;
+}
+
+.btn-danger{
+  box-shadow: 0 6px 18px rgba(239,68,68,.35);
+}
+
+/* hover glow */
+.btn-danger:hover{
+  box-shadow: 0 10px 28px rgba(239,68,68,.45);
+}
+
+td:nth-child(2){
+  transition: color .2s ease;
+}
+td:nth-child(2):hover{
+  color: var(--primary);
+}
+
+td:nth-child(4){
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Edit = secondary action */
+.btn-warning{
+  box-shadow: none;
+  opacity: .9;
+}
+
+.btn-warning:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+
+
 

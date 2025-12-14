@@ -11,7 +11,11 @@
 <body class="dark">
   <div class="container">
     <div class="header">
-      <h1>Edit Produk</h1>
+      <h1 class="title-with-logo">
+        <img src="{{ asset('images/logo.png') }}" class="logo-dashboard" alt="Logo">
+        Edit Produk
+      </h1>
+
     </div>
 
     @if ($errors->any())

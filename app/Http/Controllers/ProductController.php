@@ -20,7 +20,7 @@ class ProductController extends Controller
                       ->orWhere('description', 'like', "%{$q}%");
             })
             ->orderBy('created_at', 'desc')
-            ->paginate(5) // tampil 5 produk per halaman
+            ->paginate(5) // tampil 5 produk per ha  laman
             ->withQueryString(); // pertahankan parameter ?q=
 
         return view('products.index', compact('products', 'q'));
